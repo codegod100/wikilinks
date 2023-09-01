@@ -7,7 +7,7 @@ function render(url) {
   $('p:contains("[[")').map(function () {
     let text = this.innerHTML
     text = text.replace(
-      /\[\[([a-zA-Z0-9  -]+?)\]\]/g,
+      /\[\[([a-zA-Z0-9  -/]+?)\]\]/g,
       `[[<a href='${url}/$1'>$1</a>]]`
     )
     this.innerHTML = text
