@@ -1,28 +1,19 @@
-import { useState } from "react"
-
+import { useStorage } from "@plasmohq/storage/hook"
 function IndexPopup() {
-  const [data, setData] = useState("")
-
+  const [url, setUrl] = useStorage("url", "https://anagora.org")
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        padding: 16
+        padding: 16,
+        width: 500
       }}>
-      <h2>
-        Welcome to your
-        <a href="https://www.plasmo.com" target="_blank">
-          {" "}
-          Plasmo
-        </a>{" "}
-        Extension!
-      </h2>
-      <input onChange={(e) => setData(e.target.value)} value={data} />
-      <a href="https://docs.plasmo.com" target="_blank">
-        View Docs
-      </a>
+      <h1>Set agora url</h1>
+      <input type="text" value={url} onChange={e => setUrl (e.target.value)}  />
     </div>
+
+
   )
 }
 
