@@ -1,6 +1,5 @@
 import * as $ from "jquery"
 
-import ReactDomServer from 'react-dom/server';
 import { useStorage } from "@plasmohq/storage/hook"
 
 function render(url) {
